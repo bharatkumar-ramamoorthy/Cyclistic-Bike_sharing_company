@@ -37,7 +37,9 @@ iii. Imported all the twelve months table from the google cloud storage, stored 
 iv. After importing all the tables, combined all the tables vertically under the same column name without any duplicate data using the function 'UNION DISTINCT'
 
 The query:
-select *
+
+
+*select *
 from `cyclistic-chicago-data.cyclistic_data.january_month`
 union distinct 
 select *
@@ -71,11 +73,19 @@ select *
 from `cyclistic-chicago-data.cyclistic_data.november_month`
 union distinct
 select *
-from `cyclistic-chicago-data.cyclistic_data.december_month`
+from `cyclistic-chicago-data.cyclistic_data.december_month`*
 
-all the tables are combined using the above query, and the resulting table is stored using the 
+all the tables are combined using the above query, and the resulting table is exported into a new bigquery table using the name 'year_2021' for further querying.
 
+v. To determing, the time each rider has spent in minutes during the ride, and to record them in a separate column, the following query was used,
 
+The query:
+
+*SELECT *,
+ DATETIME_DIFF(ended_at,started_at, minute) AS difference
+ FROM `cyclistic-chicago-data.cyclistic_data.year_2021`*
+
+vi.
 
 
 
