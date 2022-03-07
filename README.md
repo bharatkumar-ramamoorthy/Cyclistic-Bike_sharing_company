@@ -84,8 +84,25 @@ The query:
 *SELECT *,
  DATETIME_DIFF(ended_at,started_at, minute) AS difference
  FROM `cyclistic-chicago-data.cyclistic_data.year_2021`*
+ 
+ and to identify, whether the query has been performed correctly, random checks performed using the following,
+ 
+ The query:
+ 
+ *select started_at,ended_at,ride_id
+from `cyclistic-chicago-data.cyclistic_data.year_2021`
+where ride_id='3EC1B5A4D4B9AB99'*
 
-vi.
+vi. The cases with time difference is negative indicating that the end time is before the start time, and to remove those outliers,
+
+The query:
+
+*SELECT * FROM `cyclistic-chicago-data.cyclistic_data.difference_in_minutes` 
+WHERE difference < 0*
+
+and there was one ride with a negative value, and that row of data has been eliminated, the ride_id is '3EC1B5A4D4B9AB99'.
+
+
 
 
 
