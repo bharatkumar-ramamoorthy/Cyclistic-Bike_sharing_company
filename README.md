@@ -39,7 +39,7 @@ iv. After importing all the tables, combined all the tables vertically under the
 The query:
 
 
-*select *
+select *
 from `cyclistic-chicago-data.cyclistic_data.january_month`
 union distinct 
 select *
@@ -73,7 +73,7 @@ select *
 from `cyclistic-chicago-data.cyclistic_data.november_month`
 union distinct
 select *
-from `cyclistic-chicago-data.cyclistic_data.december_month`*
+from `cyclistic-chicago-data.cyclistic_data.december_month`
 
 all the tables are combined using the above query, and the resulting table is exported into a new bigquery table using the name 'year_2021' for further querying.
 
@@ -81,26 +81,50 @@ v. To determing, the time each rider has spent in minutes during the ride, and t
 
 The query:
 
-*SELECT *,
+SELECT *,
  DATETIME_DIFF(ended_at,started_at, minute) AS difference
- FROM `cyclistic-chicago-data.cyclistic_data.year_2021`*
+ FROM `cyclistic-chicago-data.cyclistic_data.year_2021'
  
  and to identify, whether the query has been performed correctly, random checks performed using the following,
  
  The query:
  
- *select started_at,ended_at,ride_id
-from `cyclistic-chicago-data.cyclistic_data.year_2021`
-where ride_id='3EC1B5A4D4B9AB99'*
+SELECT started_at,ended_at,ride_id
+FROM `cyclistic-chicago-data.cyclistic_data.year_2021`
+WHERE ride_id='3EC1B5A4D4B9AB99'
 
 vi. The cases with time difference is negative indicating that the end time is before the start time, and to remove those outliers,
 
 The query:
 
-*SELECT * FROM `cyclistic-chicago-data.cyclistic_data.difference_in_minutes` 
-WHERE difference < 0*
+SELECT * FROM `cyclistic-chicago-data.cyclistic_data.difference_in_minutes` 
+WHERE difference < 0
 
 and there was one ride with a negative value, and that row of data has been eliminated, the ride_id is '3EC1B5A4D4B9AB99'.
+
+vii. To understand the average and the maximum distance travelled by each type of rider, the following query has been used,
+
+The query (casual riders):
+
+SELECT max(difference) AS maximum_casual_ridelength,
+avg(difference) AS average_casual_ridelength
+FROM `cyclistic-chicago-data.cyclistic_data.difference_in_minutes` 
+WHERE member_casual='casual'
+
+The query (member riders):
+
+SELECT max(difference) AS maximum_member_ridelength,
+avg(difference) AS average_member_ridelength
+FROM `cyclistic-chicago-data.cyclistic_data.difference_in_minutes` 
+WHERE member_casual='member'
+
+viii. To understand the type of ride used by each type of rider, the following query has been used,
+
+The query:
+
+SELECT COUNT(rideable_type),rideable_type,member_casual
+FROM `cyclistic-chicago-data.cyclistic_data.year_2021`
+GROUP BY rideable_type, member_casual
 
 
 
