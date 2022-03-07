@@ -126,12 +126,29 @@ SELECT COUNT(rideable_type),rideable_type,member_casual
 FROM `cyclistic-chicago-data.cyclistic_data.year_2021`
 GROUP BY rideable_type, member_casual
 
+5. Supporting visualizations:
 
-
-
-
-
-
+To generate visualization and create the dashboard, "google data studio, excel and powerpoint" was used,
 
 Dashboard
 ![Dashboard](https://user-images.githubusercontent.com/101074709/157043796-eeca7552-39f6-41e1-821a-c5687dbfe468.jpg)
+
+6. Key findings from the visualization of data:
+
+a. From Record count and Duration in minutes pie charts, Member riders has more number of rides (55%) than the casual riders (45%), but the total time spent by Member riders is only 34%, whereas the casual riders spent 66% of their time. It shows that the casual riders use it for a long duration whereas the member riders use more frequently.
+
+b. To add on the first result, ride length in minutes table shows the same, the average ride length of casual riders is 32 minutes, whereas for members it is 13.6 minutes. The maximum ride length in the same table indicates the maximum ride length for casual riders is 55944 minutes which is approximately 38 days and for the member riders it is 1560 minutes. This evidence shows that member riders use the bikes more frequently.
+
+c. From day vs number of rides bar graph, it is clear that casual riders has more rides during weekends (saturday and sunday), whereas for member riders it is more and consistent during weekdays.
+
+d. From number of rides by month line graph, it is evident that, people use the bikes more during July, august, september and october months compared to other months.
+
+e. From rideable type bar graph, we can understand that docked bikes are not used to member riders, whereas casual riders use them more.
+
+7. Recommendations:
+
+a. It is not true that the company's success depends on annual membership users, as it is clear that casual users contribute to more ridelength compared to member riders. So should concentrate on marketing, improving offers and attract casual riders too.
+
+b. Weekend memberships and marketing to people who are interested more in cycling activities can improve the profit, as not only the office goers but also the fun lovers are using the bikeshare services.
+
+
