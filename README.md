@@ -6,7 +6,7 @@
 
 **TOOLS USED - SQL(Bigquery), Excel, Google cloud storage and Data Studio, Powerpoint Presentation** 
 
-The project aims at using various data analytics in a Marketing Analyst team for a Fictional Bike share company called Cyclistic. In cyclistic, there are two different type of users a.Casual rider and b.Members. 
+The project in a Marketing Analyst team for a Fictional Bike share company called Cyclistic. In cyclistic, there are two different type of users a.Casual rider and b.Members. 
 Members  have annual subcriptions where the casual riders don't. Also,Lily Morelo-Marketing executive team suggests that the company's future success depends on maximizing the number of annual membershiip
 
 **1. The Business Task:**
