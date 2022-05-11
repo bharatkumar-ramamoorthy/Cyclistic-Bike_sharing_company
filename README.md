@@ -1,4 +1,4 @@
-# capstone1
+# CYCLISTIC - BIKE SHARE COMPANY
 
 **Google Data Analytics - Cyclistic Bike share**
 
